@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Function homework </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="function.css">
+    <script src="function.js"></script>
+</head>
+
+<body>
+    <h1>Displaying output from JS function</h1>
+
+    <p id="para1" class="para"></p>
+    <p id="para2" class="para"></p>
+    <p id="para3" class="para"></p>
+    <p id="para4" class="para"></p>
+
+    <script>
+        document.getElementById("para1").innerHTML = "The number of arguments in this function is | " + returnArgs(stryArray)
+        document.getElementById("para2").innerHTML = "This function reverses a string, original word is jag testar | " + reverseString("jag testar")
+        document.getElementById("para3").innerHTML = "This function determines the longest word in an array | " + findLongestWord(LongWords)
+        document.getElementById("para4").innerHTML = "This function takes an array of words and returns the words that are over a certain number of characters long; which is 5 | " + filterLongWords(words)
+    </script>
+
+</body>
+
+</html>
