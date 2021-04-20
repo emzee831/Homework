@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shape objects Classes</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="shapes.css">
+
+</head>
+
+<body>
+    <h1>Shape Object Classes</h1>
+    <div class="rectangle">
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+    </div>
+    <br>
+    <div id="circle">
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+    </div>
+    <br>
+    <div id="square">
+        <p id="p7"></p>
+        <p id="p8"></p>
+        <p id="p9"></p>
+    </div>
+
+
+    <script>
+        class Rectangle {
+            constructor(height, width) {
+                this.height = height;
+                this.width = width;
+            }
+
+            rectangle_area() {
+                return this.height * this.width;
+            }
+            get rectangleArea() {
+                return this.rectangle_area();
+            }
+            RectanglePerimeter() {
+                return 2 * (this.height + this.width)
+
+            }
+            get recperi() {
+                return this.RectanglePerimeter();
+            }
+        }
+
+        class Circle {
+            constructor(radius) {
+                this.radius = radius;
+            }
+
+            circleArea() {
+                return Math.PI * this.radius * this.radius
+            }
+            get circArea() {
+                return this.circleArea();
+            }
+            circlPerimeter() {
+                return 2 * Math.PI * this.radius;
+            }
+            get circPeri() {
+                return this.circlPerimeter();
+            }
+        }
+        class Square {
+            constructor(side) {
+                this.side = side;
+            }
+            squareArea() {
+                return this.side * this.side
+            }
+            get sqArea() {
+                return this.squareArea();
+            }
+            squarePeri() {
+                return this.side * 4
+            }
+            get sqPeri() {
+                return this.squarePeri();
+            }
+        }
+
+
+        // displaying rectangle
+        let heightRec = 150
+        let widthRec = 40
+        const rectangelShape1 = new Rectangle(heightRec, widthRec);
+        document.getElementById("p1").innerHTML = "A rectangle with a height of " + heightRec + " and a width of " + widthRec
+        document.getElementById("p2").innerHTML = "The area of this rectangle is: " + rectangelShape1.rectangleArea
+        document.getElementById("p3").innerHTML = "The perimeter of this rectagle is: " + rectangelShape1.recperi
+
+        // displaying circle
+        let circleRadius = 45
+        const circle1 = new Circle(circleRadius);
+        document.getElementById("p4").innerHTML = "The radius of a cirlce is " + circleRadius
+        document.getElementById("p5").innerHTML = "The area of this circls is: " + circle1.circArea
+        document.getElementById("p6").innerHTML = "The perimeter of this circls is: " + circle1.circPeri
+
+        // displaying square
+        let squareSide = 48
+        const square1 = new Square(squareSide);
+        document.getElementById("p7").innerHTML = "One side of a square is " + squareSide
+        document.getElementById("p8").innerHTML = "The area of this square is: " + square1.sqArea
+        document.getElementById("p9").innerHTML = "The perimeter of this square is: " + square1.sqPeri
+    </script>
+
+
+
+</body>
+
+</html>

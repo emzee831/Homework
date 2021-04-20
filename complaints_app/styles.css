@@ -1,0 +1,220 @@
+/* all margin and padding */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* main container */
+
+.header {
+    display: flex;
+    display: grid;
+    position: relative;
+    justify-content: space-between;
+    grid: 150px;
+    height: 8vh;
+    width: 95vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.0fr;
+    gap: 30px;
+}
+
+button {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-synthesis: weight 1px;
+    color: whitesmoke;
+}
+
+.button {
+    /* margin: 10px; */
+    size: 300px;
+    border: solid black;
+    border-radius: 25px;
+}
+
+#info {
+    height: 5vh;
+    font-size: 20px;
+}
+
+body {
+    width: 900px;
+    height: 750px;
+    color: rgb(255, 255, 255);
+    border: 5px;
+    /* margin-top: 2px;
+    margin-bottom: 1px;
+    margin-right: 2px;
+    margin-left: 2px; */
+    /* padding-bottom: 2px; */
+}
+
+
+/* .bgimage>* {
+    position: relative;
+    z-index: 1;
+} */
+
+.bgimage {
+    background-image: url("pictures/nyc\ train.jpg");
+    background-repeat: no-repeat;
+    /* background: fixed; */
+    background-size: cover;
+    height: 1200px;
+    width: 2000px;
+    background-position: center;
+    /* position: absolute; */
+    background-position: top center;
+    border: black;
+    border-spacing: 5px;
+    /* opacity: .88; */
+}
+
+.bgimage::before {
+    content: "";
+    position: absolute;
+    background-image: url("pictures/nyc\ train.jpg");
+    background-size: cover;
+    /* width: 100%;
+    height: 100%; */
+    background-color: rgba(0, 0, 0, .05);
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: .10;
+}
+
+h1 {
+    font: 200px;
+    position: relative;
+    color: rgb(7, 4, 4);
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    display: grid;
+    height: 50px;
+}
+
+#man {
+    background-image: url("pictures/lower-manhattan.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-position: 1px;
+    background-size: cover;
+}
+
+#que {
+    background-image: url("pictures/queens.jpg");
+    background-color: #cccccc;
+    background-position: center;
+}
+
+#bro {
+    background-image: url("pictures/bk.jpg");
+    background-color: #cccccc;
+    background-position: center;
+}
+
+#si {
+    background-image: url("pictures/si.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-position-x: -90px;
+}
+
+#bx {
+    background-image: url("pictures/bx.jpg");
+    background-color: #cccccc;
+    background-position: center;
+}
+
+
+/*results css is below  */
+
+#results {
+    font-size: 30px;
+    color: rgb(17, 13, 13);
+    text-align: center;
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+    align-content: space-around;
+    /* border: thick rgb(255, 255, 255); */
+}
+
+#reponseContainer {
+    display: grid;
+    position: relative;
+    justify-content: space-evenly;
+    grid: 200px;
+    height: 75vh;
+    width: 95vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2.0fr;
+    border: 5px rgb(0, 0, 0);
+    /* border-radius: 25px; */
+    gap: 2px;
+}
+
+.complaints {
+    color: rgb(4, 1, 1);
+    font-size: 25px;
+    /* display: flex; */
+    /* border: 1px rgb(255, 255, 255); */
+    /* border-style: thin; */
+    /* background: rgb(220, 214, 214); */
+}
+
+p {
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    font: bolder;
+    text-transform: capitalize;
+    /* text-overflow: clip;
+    text-shadow: 50px rgb(255, 255, 255); */
+    font-family: monospace;
+    /* box-sizing: border-box; */
+    border-color: rgb(14, 10, 10);
+    border: 0.1px;
+    border-style: groove;
+    border-width: 1.5px;
+    background: rgb(255, 255, 255);
+    opacity: .90;
+}
+
+p::before {
+    content: "";
+    position: relative;
+    /* background-color: rgb(220, 214, 214); */
+    /* background-color: rgba(0, 0, 0, .25); */
+    /* background: transparent; */
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    /* opacity: .45; */
+}
+
+.response {
+    color: black;
+    font-size: 20px;
+    font: bold;
+}
+
+
+/* * {
+    border: solid rgb(0, 0, 0);
+} */
+
+@media only screen and (max-width: 550px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "h1" "info" "boroughs";
+    }
+}
