@@ -1,5 +1,5 @@
-// const $tiles = $('.tile').on('click', (event)=>{
-// $(event.currentTarget).toggleClass('active')  
+// const $tiles = $('.tile').on('click', (event) => {
+//     $(event.currentTarget).toggleClass('active')
 // })
 
 const tiles = document.getElementsByClassName("tile")
@@ -16,17 +16,7 @@ for (let i = 0; i < tiles.length; i++) {
             event.target.classList.add('active')
 
     })
-}
 
-
-
-function myFunction() {
-    let x = document.getElementById("qdiv");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
 }
 
 
@@ -35,9 +25,10 @@ const toggleActive = () => {
     console.log('toggleactive')
 }
 
-
-
-
+// function displayans() {
+//     let x = document.getElementsByClassName("question-answer");
+//     x.classList.toggle("answerhide")
+// }
 
 
 class Team {
@@ -74,6 +65,7 @@ class Team {
             })
             //remember to call these methods when you instantiate the class
         return this;
+
     }
 
 }
@@ -88,3 +80,5 @@ team2.setup()
 team3.setup()
 
 console.log(team1.element)
+console.log(team2.element)
+console.log(team3.element)
