@@ -1,29 +1,24 @@
-let limit = 10;
-// limit = document.getElementsByName("complaintnumber")
-// console.log(limit);
-
 function getData() {
+    let limit = document.getElementById("info").value
     let borough = event.target.innerHTML.toUpperCase()
-        // console.log(borough)
 
 
     fetch("https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD&borough=" + borough + "&$limit=" + limit)
         .then((dataset) => dataset.json())
-        .then((formattedData) => displayData(formattedData))
+        .then((data) => displayData(data))
         // console.log(formattedData);
         //     .catch(err => console.log(err))
         // return
 }
 
 
+
 function displayData(data) {
-    let responseContain = document.getElementById("reponseContainer")
-    let child = responseContain.getElementsByTagName("p")
-    let btn = responseContain.getElementsByTagName("button")
-        // variable to remove items 
-    let emptyComplaints = document.getElementsByClassName("complaints");
+    removeData()
+
 
     for (x in data) {
+        let responseContain = document.getElementById("reponseContainer")
         let node = document.createElement("div")
         let node2 = document.createElement("div")
         let p1 = document.createElement("p")
@@ -45,7 +40,8 @@ function displayData(data) {
         p1.setAttributeNode(p1class)
         p1.innerHTML = data[x].descriptor
         resolution.innerHTML = data[x].resolution_description
-            // console.log(resolution)
+        btn.style.position = "right"
+        btn.style.left = "800px"
         responseContain.appendChild(node)
         responseContain.appendChild(node2)
         node.appendChild(p1)
@@ -53,32 +49,28 @@ function displayData(data) {
         node2.appendChild(resolution)
         resolution.hidden = true // all data displays with this
     }
-    // if (resolution.length > 0) {
-    //     parent.removeEventListener("click", () => {
-    //         emptyComplaints.removeChild(complaints);
-
-    //     })
-    // }
-
 }
 
+// taking away elements once a new borough is clicked
+function removeData() {
+    let limit = document.getElementById("info").value;
+
+    let reponseContainer1 = document.getElementById("reponseContainer");
+    let outerdiv = reponseContainer1.childNodes
+    console.log(outerdiv);
+    if (reponseContainer1.hasChildNodes()) {
+        for (let i = 0; i < limit; i++) {
+            for (let b = 0; b < outerdiv.length; b++) {
+                outerdiv[b].remove();
+            }
+        }
+    }
+}
+
+
+// showing the information in the buttons
 function show() {
     x = event.target.parentElement.parentElement.nextSibling.firstChild
     x.hidden = false
     console.log(x);
 }
-
-//if you get rid of this temp it will all work
-const button = document.querySelectorAll('.node');
-const buttonsContainer = document.querySelector('.node2');
-const buttonsContent = document.querySelectorAll('.resolution');
-
-buttonsContainer.addEventListener('click', function(e) {
-    const clicked = e.target.closest('.btn');
-    console.log(clicked);
-    //Guard Clause
-    if (!clicked) return;
-    //active tab
-    button.forEach(b => this.classList.remove('btn-active'));
-    clicked.classList.add('btn--active');
-})

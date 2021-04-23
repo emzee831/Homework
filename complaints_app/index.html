@@ -11,11 +11,11 @@
 
 <body>
     <div class="bgimage">
-        <h1>Where Are We Causing Trouble Today?</h1>
+        <h1>Where Shall We Cause Trouble Today?</h1>
         <div class="header">
-            <input type="text" name="complaintnumber" id="info" placeholder="Enter # of Complaints">
+            <input type="text" value="10" name="complaintnumber" id="info" placeholder="Enter # of Complaints">
 
-            <button class="button" id="man" onclick="getData()">MANHATTAN</button>
+            <button class="button" id="man" onclick="getData()" ondblclick="removechilds()">MANHATTAN</button>
             <button class="button" id="que" onclick="getData()">QUEENS</button>
             <button class="button" id="bro" onclick="getData()">BROOKLYN</button>
             <button class="button" id="si" onclick="getData()">STATEN ISLAND</button>
