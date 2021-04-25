@@ -1,0 +1,47 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/background\ image.jpg");
+}
+
+
+/* grid container */
+
+.gridcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+}
+
+.cell {
+    flex: 29 30 30%;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin-bottom: 1px;
+    background-color: lightcoral;
+}
+
+.cell:nth-child(3n) {
+    background-color: lightseagreen;
+}
+
+
+/* circles */
+
+#circle {
+    background: rgb(2, 2, 2);
+    border-radius: 50%;
+    width: 385px;
+    height: 385px;
+}
+
+.gridcontainer :hover {
+    box-shadow: rgb(34, 29, 28);
+    opacity: 0;
+    /* color: red; */
+}

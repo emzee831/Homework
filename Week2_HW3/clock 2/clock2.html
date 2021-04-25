@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="clock2.css">
+
+</head>
+
+<body>
+    <h1 id="header" style="text-align:center">Clock</h1>
+
+    <div id="controls">
+        <div class="time">
+            <h2 id="time"><span id="minutes" contenteditable="true">00</span> : <span id="seconds" contenteditable="true">00</span>
+            </h2>
+        </div>
+    </div>
+    <div class="editable-in-place" contenteditable="false">
+        <input id="txtTempo" type="number">
+        <button id="btnStart" onclick="setTime()">Start</button>
+    </div>
+
+    <script src="clock2.js"></script>
+
+</body>
+
+</html>

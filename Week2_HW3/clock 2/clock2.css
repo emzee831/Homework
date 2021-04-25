@@ -1,0 +1,104 @@
+body {
+    padding-top: 100px;
+}
+
+.red {
+    background-color: red;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    border: 1px solid grey;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+
+.editable-in-place {
+    background-color: #0781D4;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    border: 1px solid grey;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    bottom: 100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+h2 {
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    position: relative;
+    top: 180px;
+    z-index: 1;
+}
+
+#clockid {
+    position: relative;
+    display: flex;
+    font-size: 40px;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    /* text-align: center; */
+    margin: auto;
+    /* vertical-align: middle;
+    align-items: center; */
+}
+
+.editable-in-place input {
+    box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #2A9AD2;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.editable-in-place .inside {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+    width: 600px;
+    left: 70px;
+    top: 20%;
+    transform: translateY(-70%);
+    /* visibility: hidden; */
+}
+
+.hide {
+    visibility: hidden;
+}
+
+#txtTempo,
+#btnStart {
+    height: 30px;
+    width: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 125px;
+    bottom: 55px;
+}
+
+h1 {
+    bottom: 5000px;
+}
+
+#minutes,
+#seconds {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: inline;
+    max-width: 100%;
+    min-height: 2em;
+}
