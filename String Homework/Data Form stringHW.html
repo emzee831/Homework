@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form Data Sting HW</title>
+    <meta charset="utf-8">
+    <style media="screen">
+        body {
+            background-color: gray;
+            color: whitesmoke;
+        }
+        
+        .container {
+            display: block;
+            position: absolute;
+            justify-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Data - JavaScript</h1>
+    <div id="error"></div>
+    <form class="container" id="form" action="/" method="GET">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit">Submit</button>
+        <button id="btnInsert" type="submit">Generate random Password</button>
+
+    </form>
+
+
+
+
+
+
+    <script>
+        const name = document.getElementById('name')
+        const password = document.getElementById('password')
+        const formGet = document.getElementById('form')
+        const errordiv = document.getElementById('error');
+        const btnInsert = document.getElementById("btnInsert");
+
+        formGet.addEventListener('submit', (e) => {
+            let messages = []
+            if (name.value === '' || name.value == null) {
+                messages.push('Name is required')
+            }
+            if (password.value.length <= 6) {
+                messages.push('Password must be longer than 6 characters')
+            }
+            if (password.value.length >= 15) {
+                messages.push('Password must be less than 15 characters')
+            }
+            if (password.value === 'password') {
+                messages.push('Password cannot be password')
+            }
+            if (password.value === '1234') {
+                messages.push('Password cannot be 1234')
+            }
+            if (messages.length > 0) {
+                e.preventDefault()
+                errordiv.innerText = messages.join(', ')
+            }
+        })
+
+        //random password generator part
+        let pwGen = document.querySelector('#password')
+        btnInsert.onclick = function() {
+            let randomPw = Math.random().toString(36).substring(2);
+            console.log(randomPw);
+        }
+    </script>
+</body>
+
+
+</html>
